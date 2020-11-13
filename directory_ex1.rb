@@ -37,7 +37,7 @@ end
 
 def print_students_list
     @students.each do |student|
-      puts student[:name].center(100)
+      puts "#{student[:name]}, #{student[:cohort]} cohort".center(100)
     end
 end
 
@@ -77,7 +77,7 @@ end
 def save_students
   file = File.open("students.csv", "w")
   @students.each do |student|
-    student_data = [student[:name], student[:cophort]]
+    student_data = [student[:name], student[:cohort]]
     csv_line = student_data.join(",")
     file.puts csv_line
   end
